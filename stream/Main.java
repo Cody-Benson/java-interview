@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -76,5 +77,22 @@ public class Main {
         List<String> numbersAsString = List.of("1","2","4");
         IntStream numbersAsInt = numbersAsString.stream().mapToInt(Integer::parseInt);
         numbersAsString.forEach((n) -> System.out.println(n));
+
+
+        /* stream id problem
+        List<String> words = new ArrayList<>();
+        words.add("1");
+        words.add("2");
+        words.add("3");
+
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(1);
+        numbers.add(2);
+
+        List<Integer> processingIds = words.stream().map(Integer::parseInt).collect(Collectors.toList());
+        Set<Integer> processedIds = numbers.stream().collect(Collectors.toSet());
+
+        List<Integer> toBeProcessed = processingIds.stream().filter((id) -> !processedIds.contains(id)).collect(Collectors.toList());
+        System.out.println(toBeProcessed);*/
     }
 }
